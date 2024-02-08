@@ -12,9 +12,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			show: false
 		},
 		actions: {
+
+			handleClose: () => {
+				setStore({ show: false });
+			},
+			handleShow: () => {
+				setStore({ show: true });
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

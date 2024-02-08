@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Context } from "../store/appContext";
+import { Modal } from "./component/Modal.jsx";
 
 export const MyNavbar = () => {
+      const { store, actions} = useContext(Context)
+      const { handleShow } = actions
+
   return (
     <>
         <Navbar expand="md" className="bg-warning mb-3">
@@ -43,10 +48,13 @@ export const MyNavbar = () => {
                     <i className="fa-solid fa-heart"></i>
                   </Nav.Link>
                   <Nav.Link href="#action5">
-                    <i class="fa-solid fa-user"></i>
+                    <Modal/>
+                  <Button variant="primary" onClick={handleShow}>
+                    <i className="fa-solid fa-user"></i>        
+                  </Button>
                   </Nav.Link>
                   <Nav.Link href="#action">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i className="fa-solid fa-cart-shopping"></i>
                   </Nav.Link>
                 </Nav>
               </Offcanvas.Body>
