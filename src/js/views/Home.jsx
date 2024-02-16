@@ -1,7 +1,7 @@
-import React from "react";
-import "../../styles/home.css";
-
+import React from 'react';
 
 export const Home = () => (
-  <div>Hola </div>
+  <div className="vh-auto">
+    Hola
+  </div>
 );
